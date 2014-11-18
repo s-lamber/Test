@@ -1,0 +1,40 @@
+ 1994  man git
+ 1995  man git-log
+ 1996  git help log
+ 1997  git config
+ 1998  git help log
+ 1999  git config --global user.name "Lambert Sylvain"
+ 2000  git config --global user.email "sylvain.lambert03@edu.univ-fcomte.fr"
+ 2001  git init
+ 2002  mkdir Exemple
+ 2003  cd Exemple*
+ 2004  git init
+ 2005  cd ..
+ 2006  cd .git
+ 2007  ls
+ 2008  cd ..
+ 2009  rm .git
+ 2010  rmdir .git
+ 2011  rmdir -f .git
+ 2012  rmdir -r .git
+ 2013  rm -rf .git
+ 2014  ls
+ 2015  cd Exemple/
+ 2016  ls
+ 2017  ls -a
+ 2018  echo "" > readme
+ 2019  ls
+ 2020  echo "" > readme2
+ 2021  echo "" > readme3
+ 2022  clear
+ 2023  git add *
+ 2024  git commit
+ 2025  git diff
+ 2026  man git-dif
+ 2027  git help dif
+ 2028  help git dif
+ 2029  man git-diff
+ 2030  git commit
+ 2031  git add *
+ 2032  git commit
+
