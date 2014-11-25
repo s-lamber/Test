@@ -37,4 +37,48 @@
  2030  git commit
  2031  git add *
  2032  git commit
+ 2033  git status
+ 2034  git diff --cached diff(zone tampon/.git)
+ 2035  git commit -a 
+ 2003  git log -p
+ 2004  git log --stat --summary
+ 2004  git log -oneline
+ 2005  man history
+ 2009  gitk
+
+// ajout de nouveaux fichiers
+
+ 2014  echo "">rdme
+ 2015  git add rdme
+ 2016  git commit
+ 2018  git rm (--cached) rdme
+ 2019  git commit
+ 2021  git mv source dest
+
+// Mettre du travail de côté
+
+ 2025  git stash
+ 2027  git stash pop
+ 2027  git stash list
+ 2027  git stash drop
+ 2027  git stash clean
+
+// Branches      
+
+      .   	 .
+       \  merge /
+	. ---->.
+branche	 \    /	branche 
+expéri-	  .  .	master
+mentale	   \/
+           |
+	   .
+	   |
+	   . <- commit initial	
+
+Créer branche : $ git branch experimental
+Lister : $ git branch 
+Changer branche : $ git checkout experimental
+$ gitk -- all
+
 
