@@ -80,5 +80,3 @@ Créer branche : $ git branch experimental
 Lister : $ git branch 
 Changer branche : $ git checkout experimental
 $ gitk -- all
-
-
