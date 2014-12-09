@@ -37,4 +37,66 @@
  2030  git commit
  2031  git add *
  2032  git commit
- 2033  history > commandesgit
+ 2033  git status
+ 2034  git diff --cached diff(zone tampon/.git)
+ 2035  git commit -a 
+ 2003  git log -p
+ 2004  git log --stat --summary
+ 2004  git log -oneline
+ 2005  man history
+ 2009  gitk
+
+// ajout de nouveaux fichiers
+
+ 2014  echo "">rdme
+ 2015  git add rdme
+ 2016  git commit
+ 2018  git rm (--cached) rdme
+ 2019  git commit
+ 2021  git mv source dest
+
+// Mettre du travail de côté
+
+ 2025  git stash
+ 2027  git stash pop
+ 2027  git stash list
+ 2027  git stash drop
+ 2027  git stash clean
+
+// Branches      
+
+      .   	 .
+       \  merge /
+	. ---->.
+branche	 \    /	branche 
+expéri-	  .  .	master
+mentale	   \/
+           |
+	   .
+	   |
+	   . <- commit initial	
+
+Créer branche : $ git branch experimental
+Lister : $ git branch 
+Changer branche : $ git checkout experimental
+$ gitk -- all 
+Fusionner une branche : $ git merge experimental
+Supprimer une branche : $ git branch -d experimental
+Supprimer une branche (forcer): $ git branch -D experimental
+
+// Travail collaboratif
+
+Alice a un dépot
+Bob veut contribuer-> il doit faire une copie locale du projet 
+$ git clone /home/alice/projet mondepot
+			|	  |
+			
+		      source 	nom local(optionnel)
+Pour une source distante utiliser ssh:
+ssh bob@alice.org:/home/alice/projet
+bob peut faire des modifs et commits
+
+Alice doit mettre les bonnes permissions: $ chmod g+x ~
+					  $ chmod -R g+rX ~/projet
+
+Bob doit configuer son ssh : cours-info/Documentation/Trucs et Astuces

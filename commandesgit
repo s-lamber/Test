@@ -43,7 +43,6 @@
  2003  git log -p
  2004  git log --stat --summary
  2004  git log -oneline
- 2005  man history
  2009  gitk
 
 // ajout de nouveaux fichiers
@@ -79,4 +78,50 @@ mentale	   \/
 Créer branche : $ git branch experimental
 Lister : $ git branch 
 Changer branche : $ git checkout experimental
-$ gitk -- all
+$ gitk -- all 
+Fusionner une branche : $ git merge experimental
+Supprimer une branche : $ git branch -d experimental
+Supprimer une branche (forcer): $ git branch -D experimental
+
+// Travail collaboratif
+
+Alice a un dépot
+Bob veut contribuer-> il doit faire une copie locale du projet 
+$ git clone /home/alice/projet mondepot
+			|	  |
+			
+		      source 	nom local(optionnel)
+Pour une source distante utiliser ssh:
+ssh bob@alice.org:/home/alice/projet
+bob peut faire des modifs et commits
+
+Alice peut les récupérer $ git pull /home/bob/mondepot
+
+Alice doit mettre les bonnes permissions: $ chmod g+x ~
+					  $ chmod -R g+rX ~/projet
+
+Bob doit configuer son ssh : cours-info/Documentation/Trucs et Astuces
+
+git pull fait 2 opérations : (1) récupère les commit distants
+								=> alice git fetch /home/bob/monprojet 
+								=> on peut étudier les diff : 
+									git log -p HEAD..FETCH_HEAD							 
+								(2) les intègre dans la branche locale
+								git merge FETCH_HEAD
+								git pull
+
+// Avec un serveur central :
+	SERVEUR
+	ex :    github
+		^	  ^       ^ 
+		|	  |       |
+		v     v       v
+	  dev1 	dev2 	dev 3
+	  	<---->
+
+$ git clone URL 
+HTTPS : https://github.com/login/Depot.git
+SSH : git@github.com:login/Depot.git
+
+Remarque : il peut être nécessaire de spécifier un proxy pour https
+variable d'environnement https_proxy= $http_proxy
